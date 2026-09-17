@@ -5,16 +5,16 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Moaaz Elmahi — Portfolio',
-  description: '☁ Cloud Instructor @ NTI| DevOps Engineer | Cloud Engineer | Cloud Support',
+  title: 'Moaaz Saeed Elmahi — Cloud / DevOps Engineer',
+  description: 'Cloud / DevOps Engineer specializing in AWS, Infrastructure as Code, CI/CD, and reliable cloud operations.',
   metadataBase: new URL('https://moaaz.example.com'),
   openGraph: {
-    title: 'Moaaz Elmahi — Portfolio',
-    description: '☁ Cloud Instructor @ NTI | DevOps Engineer | Cloud Engineer | Cloud Support',
+    title: 'Moaaz Saeed Elmahi — Cloud / DevOps Engineer',
+    description: 'Cloud / DevOps Engineer specializing in AWS, Infrastructure as Code, CI/CD, and reliable cloud operations.',
     url: 'https://moaaz.example.com',
-    siteName: 'Moaaz Elmahi Portfolio',
+    siteName: 'Moaaz Saeed Elmahi Portfolio',
     images: [
-      { url: '/og.png', width: 1200, height: 630, alt: 'Moaaz Elmahi Portfolio' }
+      { url: '/og.png', width: 1200, height: 630, alt: 'Moaaz Saeed Elmahi Portfolio' }
     ],
     locale: 'en_US',
     type: 'website'

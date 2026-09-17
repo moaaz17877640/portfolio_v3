@@ -1,4 +1,5 @@
 import { Github, Linkedin, Facebook } from 'lucide-react'
+import { profile } from '@/data/profile'
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="text-center text-sm text-neutral-600 dark:text-white/60">
-          © {new Date().getFullYear()} Moaaz Elmahi. All rights reserved.
+          © {new Date().getFullYear()} {profile.name}. All rights reserved.
         </div>
       </div>
     </footer>

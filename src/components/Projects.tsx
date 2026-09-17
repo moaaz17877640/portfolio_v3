@@ -1,64 +1,41 @@
 "use client"
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import GlassCard from './GlassCard'
 import { Github } from 'lucide-react'
-
-type Repo = {
-  id: number
-  name: string
-  html_url: string
-  description: string | null
-  homepage: string | null
-  language: string | null
-  topics?: string[]
-}
+import { profile } from '@/data/profile'
 
 export default function Projects() {
-  const [repos, setRepos] = useState<Repo[] | null>(null)
-
-  useEffect(() => {
-    fetch('/api/github')
-      .then((r) => r.json())
-      .then(setRepos)
-      .catch(() => setRepos([]))
-  }, [])
-
   return (
     <section id="projects" className="section">
-      <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">Projects</motion.h2>
+      <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <p className="text-sm uppercase tracking-[0.2em] text-cyan-500 dark:text-neon-cyan">Selected work</p>
+        <h2 className="mt-2 text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">Projects</h2>
+      </motion.div>
       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {!repos && <div className="text-neutral-600 dark:text-white/60">Loading repositories…</div>}
-        {repos && repos.length === 0 && <div className="text-neutral-600 dark:text-white/60">No repositories found.</div>}
-        {repos && repos.map((repo) => (
-          <motion.a
-            key={repo.id}
-            href={repo.homepage || repo.html_url}
-            target="_blank"
-            rel="noreferrer"
+        {profile.projects.map((project, index) => (
+          <motion.div
+            key={project.name}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="group block"
+            transition={{ delay: Math.min(index, 5) * 0.05, duration: 0.5 }}
           >
             <GlassCard className="p-6 h-full">
-              <div className="flex items-start justify-between">
-                <div className="text-lg font-semibold group-hover:underline">{repo.name}</div>
-                <Github className="w-5 h-5 text-neutral-700 dark:text-white/70" />
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-lg font-semibold text-neutral-900 dark:text-white">{project.name}</div>
+                  {project.company && <div className="mt-1 text-xs uppercase tracking-wider text-cyan-700 dark:text-neon-cyan">{project.company}</div>}
+                </div>
+                <Github className="w-5 h-5 shrink-0 text-neutral-700 dark:text-white/70" />
               </div>
-              <div className="mt-2 text-sm text-neutral-700 dark:text-white/70 min-h-[48px]">{repo.description || 'No description provided.'}</div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {repo.language && (
-                  <span className="text-xs px-2 py-1 rounded-full border border-black/10 bg-black/5 text-neutral-700 dark:border-white/15 dark:bg-white/5 dark:text-white/80">{repo.language}</span>
-                )}
-                {repo.topics && repo.topics.slice(0, 3).map(t => (
-                  <span key={t} className="text-xs px-2 py-1 rounded-full border border-black/10 bg-black/5 text-neutral-700 dark:border-white/15 dark:bg-white/5 dark:text-white/80">{t}</span>
-                ))}
-              </div>
+              <div className="mt-3 text-sm text-neutral-700 dark:text-white/70">{project.description}</div>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-white/75">
+                {project.highlights.map((highlight) => <li key={highlight} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" />{highlight}</li>)}
+              </ul>
+              <div className="mt-5 text-xs text-neutral-500 dark:text-white/50">{project.stack}</div>
             </GlassCard>
-          </motion.a>
+          </motion.div>
         ))}
       </div>
     </section>

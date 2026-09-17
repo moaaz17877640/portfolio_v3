@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Download, Mail } from 'lucide-react'
 import Image from 'next/image'
+import { profile } from '@/data/profile'
 // Use the same locally committed portrait image as About.tsx
 // This avoids needing a /public copy and works reliably with Next.js static import
 import portrait from '../../Gemini_Generated_Image_v97mqav97mqav97m.png'
@@ -19,7 +20,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-neutral-900 dark:text-white"
           >
-            Hi, I’m <span className="gradient-text drop-shadow">Moaaz Elmahi</span>
+            Hi, I’m <span className="gradient-text drop-shadow">{profile.name}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +28,7 @@ export default function Hero() {
             transition={{ delay: 0.15, duration: 0.8 }}
             className="mt-4 text-lg md:text-xl text-neutral-700 dark:text-white/70 max-w-2xl"
           >
-            ☁ Cloud Instructor @ National Telecommunication Institute | DevOps Engineer | Cloud Engineer | Cloud Support
+            {profile.headline} building reliable cloud platforms, automated delivery pipelines, and developer tooling.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

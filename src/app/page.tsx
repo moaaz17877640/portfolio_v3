@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import Experience from '@/components/Experience'
 import dynamic from 'next/dynamic'
 const Skills = dynamic(() => import('@/components/Skills'), { ssr: false, loading: () => null })
 const Projects = dynamic(() => import('@/components/Projects'), { ssr: false, loading: () => null })
@@ -15,6 +16,7 @@ export default function Home() {
       <DeferredParticles />
       <Hero />
       <About />
+      <Experience />
       <Skills />
       <Projects />
       <Resume />
