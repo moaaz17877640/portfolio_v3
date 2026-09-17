@@ -15,7 +15,7 @@ const nextConfig = {
   basePath: repository && !isUserSite ? `/${repository}` : '',
   assetPrefix: repository && !isUserSite ? `/${repository}/` : '/',
   images: {
-    unoptimized: process.env.NODE_ENV === 'development',
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
       { protocol: 'https', hostname: 'raw.githubusercontent.com' }
