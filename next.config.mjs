@@ -13,7 +13,7 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   basePath: repository && !isUserSite ? `/${repository}` : '',
-  assetPrefix: repository && !isUserSite ? `/${repository}/` : '/',
+  assetPrefix: repository && !isUserSite ? `/${repository}/` : undefined,
   images: {
     unoptimized: true,
     remotePatterns: [

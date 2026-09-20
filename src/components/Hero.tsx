@@ -314,6 +314,13 @@ export default function Hero() {
                     priority
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover"
+                    onError={(e) => {
+                      // Fallback to static public path if chunk URL fails
+                      const target = e.currentTarget as HTMLImageElement
+                      if (target.src !== '/portrait.png') {
+                        target.src = '/portrait.png'
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent" />
                   

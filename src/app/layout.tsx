@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: 'https://moaaz.dev',
     siteName: 'Moaaz Saeed Elmahi Portfolio',
     images: [
-      { url: '/Gemini_Generated_Image_v97mqav97mqav97m.png', width: 1200, height: 630, alt: 'Moaaz Saeed Elmahi' }
+      { url: '/portrait.png', width: 1200, height: 630, alt: 'Moaaz Saeed Elmahi' }
     ],
     locale: 'en_US',
     type: 'website'
