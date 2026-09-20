@@ -43,12 +43,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body className="font-sans antialiased min-h-screen bg-[#060813] text-slate-100 relative selection:bg-neon-cyan/20 selection:text-neon-cyan">
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-sans antialiased min-h-screen bg-[#f8fafc] text-slate-900 dark:bg-[#060813] dark:text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-800 dark:selection:bg-neon-cyan/20 dark:selection:text-neon-cyan">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {/* Ambient Lighting & Background Grid */}
-          <div className="fixed inset-0 pointer-events-none z-0 bg-radial-glow opacity-80" />
-          <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+          <div className="fixed inset-0 pointer-events-none z-0 bg-radial-glow opacity-30 dark:opacity-80" />
+          <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-15 dark:opacity-40 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
           
           <div className="relative z-10 min-h-screen flex flex-col">
             <Navbar />

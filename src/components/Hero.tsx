@@ -80,11 +80,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium shadow-sm mb-6"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 dark:bg-emerald-500/10 dark:border-emerald-500/30 dark:text-emerald-400 text-xs font-mono font-medium shadow-sm mb-6"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600 dark:bg-emerald-500" />
             </span>
             <span>Available for Cloud & DevOps Opportunities</span>
           </motion.div>
@@ -94,7 +94,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.12]"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]"
           >
             Hi, I’m{' '}
             <span className="gradient-text drop-shadow-sm font-black">
@@ -111,9 +111,9 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.35 }}
-                className="text-lg sm:text-2xl font-semibold text-cyan-300 flex items-center gap-2 font-mono"
+                className="text-lg sm:text-2xl font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2 font-mono"
               >
-                <Terminal className="w-5 h-5 text-neon-cyan" />
+                <Terminal className="w-5 h-5 text-cyan-600 dark:text-neon-cyan" />
                 <span>{rotatingRoles[roleIndex]}</span>
               </motion.span>
             </AnimatePresence>
@@ -124,10 +124,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal"
+            className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal"
           >
-            DevOps Engineer at <span className="text-white font-semibold">Azzrk</span> and Cloud Instructor at{' '}
-            <span className="text-white font-semibold">NTI</span>. I design resilient AWS architectures, automate zero-downtime CI/CD pipelines, and craft declarative Infrastructure as Code.
+            DevOps Engineer at <span className="text-slate-900 font-semibold dark:text-white">Azzrk</span> and Cloud Instructor at{' '}
+            <span className="text-slate-900 font-semibold dark:text-white">NTI</span>. I design resilient AWS architectures, automate zero-downtime CI/CD pipelines, and craft declarative Infrastructure as Code.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -143,12 +143,12 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="#resume" className="btn-outline">
-              <Download className="w-4 h-4 text-cyan-400" />
+              <Download className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>View Resume</span>
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
             >
               <span>Explore Projects</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -160,23 +160,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 w-full grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/[0.08]"
+            className="mt-12 w-full grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-200 dark:border-white/[0.08]"
           >
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">2+</span>
-              <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider">Years Experience</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">2+</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-medium">Years Experience</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-extrabold text-neon-cyan font-mono">8+</span>
-              <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider">Production Apps</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-cyan-600 dark:text-neon-cyan font-mono">8+</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-medium">Production Apps</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">3x</span>
-              <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cloud Certified</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">3x</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-medium">Cloud Certified</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-extrabold text-neon-pink font-mono">100+</span>
-              <span className="text-xs text-slate-400 mt-1 uppercase tracking-wider">Mentees Taught</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-pink-600 dark:text-neon-pink font-mono">100+</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-medium">Mentees Taught</span>
             </div>
           </motion.div>
         </div>
@@ -188,22 +188,22 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="lg:col-span-5"
         >
-          <SpotlightCard className="p-0 border-white/10 shadow-2xl">
+          <SpotlightCard className="p-0 border-slate-200 dark:border-white/10 shadow-xl dark:shadow-2xl">
             {/* Header Tabs */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/[0.08] bg-white/[0.02]">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-white/[0.08] bg-slate-50/80 dark:bg-white/[0.02]">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                <span className="text-xs font-mono text-slate-400 ml-2 font-medium">moaaz@prod-runner-01</span>
+                <span className="text-xs font-mono text-slate-600 dark:text-slate-400 ml-2 font-medium">moaaz@prod-runner-01</span>
               </div>
-              <div className="flex items-center gap-1 bg-black/40 rounded-lg p-1 border border-white/[0.06]">
+              <div className="flex items-center gap-1 bg-slate-200/80 dark:bg-black/40 rounded-lg p-1 border border-slate-300 dark:border-white/[0.06]">
                 <button
                   onClick={() => setActiveTab('pipeline')}
                   className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
                     activeTab === 'pipeline'
-                      ? 'bg-neon-cyan/20 text-cyan-300 font-semibold'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-white text-cyan-800 shadow-sm font-bold dark:bg-neon-cyan/20 dark:text-cyan-300 dark:font-semibold'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                   }`}
                 >
                   CI/CD Pipeline
@@ -212,8 +212,8 @@ export default function Hero() {
                   onClick={() => setActiveTab('portrait')}
                   className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
                     activeTab === 'portrait'
-                      ? 'bg-neon-cyan/20 text-cyan-300 font-semibold'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-white text-cyan-800 shadow-sm font-bold dark:bg-neon-cyan/20 dark:text-cyan-300 dark:font-semibold'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                   }`}
                 >
                   Portrait
@@ -224,20 +224,20 @@ export default function Hero() {
             {/* Tab 1: Interactive CI/CD Pipeline Simulator */}
             {activeTab === 'pipeline' && (
               <div className="p-5 sm:p-6 font-mono text-xs">
-                <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/[0.06]">
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-white/[0.06]">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-white text-sm">main_workflow.yml</span>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      <span className="font-bold text-slate-900 dark:text-white text-sm">main_workflow.yml</span>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-500/20 dark:text-emerald-300 dark:border-emerald-500/30 font-semibold">
                         {pipelineProgress === 100 ? 'SUCCESS' : 'RUNNING...'}
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-400 mt-0.5">Branch: <span className="text-cyan-400">main</span> · Commit: <span className="text-indigo-400">#4f91b2e</span></p>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Branch: <span className="text-cyan-700 dark:text-cyan-400 font-semibold">main</span> · Commit: <span className="text-indigo-600 dark:text-indigo-400">#4f91b2e</span></p>
                   </div>
                   <button
                     onClick={handleRerunPipeline}
                     disabled={isRunningPipeline}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs transition-all disabled:opacity-50"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-50 hover:bg-cyan-100 text-cyan-700 dark:border-cyan-500/30 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 dark:text-cyan-300 text-xs font-semibold transition-all disabled:opacity-50 shadow-sm"
                   >
                     <RotateCw className={`w-3.5 h-3.5 ${isRunningPipeline ? 'animate-spin' : ''}`} />
                     <span>Re-run</span>
@@ -245,9 +245,9 @@ export default function Hero() {
                 </div>
 
                 {/* Progress bar */}
-                <div className="w-full bg-white/[0.06] rounded-full h-1.5 mb-4 overflow-hidden">
+                <div className="w-full bg-slate-200 dark:bg-white/[0.06] rounded-full h-1.5 mb-4 overflow-hidden">
                   <motion.div
-                    className="bg-gradient-to-r from-neon-cyan via-indigo-500 to-emerald-400 h-full rounded-full"
+                    className="bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-500 h-full rounded-full"
                     animate={{ width: `${pipelineProgress}%` }}
                     transition={{ duration: 0.3 }}
                   />
@@ -265,26 +265,26 @@ export default function Hero() {
                         key={step.id}
                         className={`flex items-center justify-between p-2.5 rounded-lg border transition-all ${
                           isDone
-                            ? 'bg-white/[0.02] border-white/[0.06] text-slate-300'
+                            ? 'bg-slate-50 border-slate-200 text-slate-700 dark:bg-white/[0.02] dark:border-white/[0.06] dark:text-slate-300'
                             : isCurrent
-                            ? 'bg-neon-cyan/5 border-neon-cyan/40 text-cyan-300 shadow-sm'
-                            : 'bg-transparent border-transparent text-slate-500'
+                            ? 'bg-cyan-50 border-cyan-400 text-cyan-900 dark:bg-neon-cyan/5 dark:border-neon-cyan/40 dark:text-cyan-300 shadow-sm'
+                            : 'bg-transparent border-transparent text-slate-400 dark:text-slate-500'
                         }`}
                       >
                         <div className="flex items-center gap-2.5">
                           {isDone ? (
-                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                           ) : isCurrent ? (
-                            <RotateCw className="w-4 h-4 text-neon-cyan animate-spin shrink-0" />
+                            <RotateCw className="w-4 h-4 text-cyan-600 dark:text-neon-cyan animate-spin shrink-0" />
                           ) : (
-                            <div className="w-4 h-4 rounded-full border border-slate-600 shrink-0" />
+                            <div className="w-4 h-4 rounded-full border border-slate-400 dark:border-slate-600 shrink-0" />
                           )}
                           <div>
-                            <div className="font-medium text-slate-200">{step.name}</div>
-                            <div className="text-[10px] text-slate-400">{step.tool}</div>
+                            <div className="font-medium text-slate-900 dark:text-slate-200">{step.name}</div>
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400">{step.tool}</div>
                           </div>
                         </div>
-                        <span className="text-[11px] text-slate-400 font-mono">
+                        <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
                           {isDone ? step.duration : isCurrent ? 'running...' : 'queued'}
                         </span>
                       </div>
@@ -293,8 +293,8 @@ export default function Hero() {
                 </div>
 
                 {/* Deployment Verification Footer */}
-                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] text-slate-400">
-                  <span className="flex items-center gap-1.5 text-emerald-400">
+                <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
+                  <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-semibold">
                     <ShieldCheck className="w-4 h-4" />
                     Security & Health: 100% Passed
                   </span>
@@ -306,7 +306,7 @@ export default function Hero() {
             {/* Tab 2: Portrait with floating badge chips */}
             {activeTab === 'portrait' && (
               <div className="p-6 relative">
-                <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-lg bg-slate-100 dark:bg-dark-950">
                   <Image
                     src={portrait}
                     alt={profile.name}
@@ -322,15 +322,15 @@ export default function Hero() {
                       }
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Floating badge inside */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-dark-900/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-white/95 dark:bg-dark-900/80 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-lg flex items-center justify-between">
                     <div>
-                      <p className="text-white font-bold text-sm">{profile.name}</p>
-                      <p className="text-xs text-cyan-400 font-mono">{profile.headline}</p>
+                      <p className="text-slate-900 dark:text-white font-bold text-sm">{profile.name}</p>
+                      <p className="text-xs text-cyan-700 dark:text-cyan-400 font-mono font-medium">{profile.headline}</p>
                     </div>
-                    <span className="px-2 py-1 rounded bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan text-[11px] font-mono">
+                    <span className="px-2 py-1 rounded bg-cyan-50 border border-cyan-300 text-cyan-700 dark:bg-neon-cyan/10 dark:border-neon-cyan/30 dark:text-neon-cyan text-[11px] font-mono font-semibold">
                       Cairo, EG
                     </span>
                   </div>

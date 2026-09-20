@@ -10,7 +10,7 @@ interface SpotlightCardProps extends PropsWithChildren {
 export default function SpotlightCard({
   children,
   className = '',
-  spotlightColor = 'rgba(0, 242, 254, 0.15)'
+  spotlightColor
 }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
@@ -33,23 +33,26 @@ export default function SpotlightCard({
     setOpacity(0)
   }, [])
 
+  const defaultSpotlight = spotlightColor || 'rgba(6, 182, 212, 0.15)'
+
   return (
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl border border-white/[0.08] bg-dark-900/70 dark:bg-dark-900/70 light:bg-white/80 backdrop-blur-xl transition-all duration-300 ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/90 text-slate-900 shadow-lg shadow-slate-200/50 dark:border-white/[0.08] dark:bg-dark-900/70 dark:text-slate-100 dark:shadow-none backdrop-blur-xl transition-all duration-300 ${className}`}
     >
       {/* Dynamic spotlight radial glow following the cursor */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-0"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${defaultSpotlight}, transparent 40%)`
         }}
       />
       <div className="relative z-10 h-full">{children}</div>
     </div>
   )
 }
+

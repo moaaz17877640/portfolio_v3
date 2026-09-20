@@ -75,6 +75,10 @@ html.light .spotlight-card {
   @apply relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-neon-cyan via-cyan-500 to-neon-violet hover:opacity-95 shadow-glow hover:shadow-glow-strong transition-all duration-300 active:scale-[0.98] text-sm md:text-base;
 }
 
+html.light .btn-primary {
+  @apply bg-gradient-to-r from-cyan-600 via-indigo-600 to-violet-600 text-white shadow-md hover:shadow-lg shadow-cyan-600/20 hover:from-cyan-700 hover:to-violet-700;
+}
+
 /* Secondary outline button with subtle border shine */
 .btn-outline {
   @apply relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/30 text-white backdrop-blur-md transition-all duration-300 active:scale-[0.98] text-sm md:text-base;
