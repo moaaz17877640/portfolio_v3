@@ -1,77 +1,174 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { ExternalLink, GraduationCap, MapPin } from 'lucide-react'
-import GlassCard from './GlassCard'
+import {
+  Briefcase,
+  Calendar,
+  MapPin,
+  ExternalLink,
+  GraduationCap,
+  Award,
+  Sparkles,
+  CheckCircle2,
+  Building2
+} from 'lucide-react'
+import SpotlightCard from './SpotlightCard'
 import { profile } from '@/data/profile'
+import { SiAmazonaws, SiOracle } from 'react-icons/si'
 
 export default function Experience() {
   return (
-    <section id="experience" className="section">
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="text-sm uppercase tracking-[0.2em] text-cyan-500 dark:text-neon-cyan">Career snapshot</p>
-        <h2 className="mt-2 text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">Experience & credentials</h2>
-      </motion.div>
+    <section id="experience" className="section relative">
+      {/* Section Header */}
+      <div className="flex flex-col items-start mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-medium mb-3">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>CAREER & CREDENTIALS</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          Professional Experience
+        </h2>
+        <p className="mt-3 text-slate-400 text-base sm:text-lg max-w-2xl">
+          Track record in production cloud environments, developer tooling, and technical education.
+        </p>
+      </div>
 
-      <div className="mt-8 grid lg:grid-cols-[1.4fr_0.6fr] gap-6">
-        <div className="space-y-6">
+      <div className="grid lg:grid-cols-12 gap-8">
+        {/* Left Column: Vertical Glowing Timeline */}
+        <div className="lg:col-span-7 space-y-6 relative">
+          {/* Vertical line connecting nodes */}
+          <div className="absolute top-4 bottom-4 left-6 sm:left-8 w-[2px] bg-gradient-to-b from-neon-cyan via-indigo-500 to-transparent pointer-events-none hidden sm:block" />
+
           {profile.experience.map((item, index) => (
             <motion.div
               key={`${item.company}-${item.role}`}
-              initial={{ opacity: 0, x: -12 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+              className="relative sm:pl-14"
             >
-              <GlassCard className="p-6 md:p-8">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+              {/* Timeline Glowing Node */}
+              <div className="absolute top-6 left-6 -translate-x-1/2 w-5 h-5 rounded-full bg-dark-950 border-2 border-neon-cyan hidden sm:flex items-center justify-center shadow-glow">
+                <span className="w-1.5 h-1.5 rounded-full bg-neon-cyan" />
+              </div>
+
+              <SpotlightCard className="p-6 sm:p-8 border-white/10 hover:border-cyan-500/30">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 pb-4 border-b border-white/[0.08]">
                   <div>
-                    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">{item.role}</h3>
-                    <p className="mt-1 text-cyan-700 dark:text-neon-cyan">{item.company}</p>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 mb-2">
+                      <Building2 className="w-3 h-3" />
+                      <span>{item.company}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white tracking-tight">{item.role}</h3>
                   </div>
-                  <div className="text-sm text-neutral-600 dark:text-white/60 sm:text-right">
-                    <div>{item.period}</div>
-                    <div className="mt-1 flex items-center gap-1 sm:justify-end"><MapPin className="w-3.5 h-3.5" />{item.location}</div>
+                  <div className="flex flex-col sm:items-end text-xs font-mono text-slate-400 gap-1">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>{item.period}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                      <span>{item.location}</span>
+                    </div>
                   </div>
                 </div>
-                <ul className="mt-5 space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-white/75">
-                  {item.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" />{highlight}</li>)}
+
+                <ul className="mt-5 space-y-2.5">
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-neon-cyan shrink-0 mt-0.5" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
                 </ul>
-              </GlassCard>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
 
-        <div className="space-y-6">
-          <GlassCard className="p-6 md:p-8">
-            <div className="flex items-center gap-3">
-              <GraduationCap className="w-5 h-5 text-neon-cyan" />
-              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">Education</h3>
+        {/* Right Column: Certifications & Education */}
+        <div className="lg:col-span-5 space-y-6">
+          {/* Certifications Showcase */}
+          <SpotlightCard className="p-6 sm:p-8 border-white/10">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
+              <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                <Award className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Verified Certifications</h3>
+                <p className="text-xs text-slate-400">Credly & Vendor Verified Credentials</p>
+              </div>
             </div>
-            <p className="mt-5 font-medium text-neutral-900 dark:text-white">B.Sc. in Information Technology</p>
-            <p className="mt-1 text-sm text-neutral-700 dark:text-white/70">Tanta University · 2021 - 2025</p>
-            <p className="mt-3 text-sm text-neutral-700 dark:text-white/70">GPA: 3.6 (B+) · Graduation project: SPIDERS for Security (A+)</p>
-          </GlassCard>
-          <GlassCard className="p-6 md:p-8">
-            <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">Certifications</h3>
-            <ul className="mt-5 space-y-4">
-              {profile.certifications.map((cert) => (
-                <li key={cert.name}>
-                  <a href={cert.url} target="_blank" rel="noreferrer" className="group flex items-start gap-2 text-sm text-neutral-700 dark:text-white/75 hover:text-neutral-950 dark:hover:text-white">
-                    <span className="leading-relaxed">{cert.name}</span>
-                    <ExternalLink className="mt-0.5 w-4 h-4 shrink-0 opacity-60 group-hover:opacity-100" />
+
+            <div className="mt-5 space-y-3.5">
+              {profile.certifications.map((cert) => {
+                const isAws = cert.name.toLowerCase().includes('aws')
+                return (
+                  <a
+                    key={cert.name}
+                    href={cert.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-start gap-3.5 p-3.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06] hover:border-cyan-500/30 transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-white/[0.04] border border-white/10 group-hover:border-cyan-500/40 transition-colors">
+                      {isAws ? (
+                        <SiAmazonaws size={22} color="#FF9900" />
+                      ) : (
+                        <SiOracle size={22} color="#F80000" />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="font-semibold text-white text-xs sm:text-sm group-hover:text-cyan-300 transition-colors leading-snug">
+                          {cert.name}
+                        </span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-white shrink-0" />
+                      </div>
+                      <span className="text-[10px] font-mono text-cyan-400/90 mt-1 inline-block">
+                        Verify on Credly ↗
+                      </span>
+                    </div>
                   </a>
-                </li>
-              ))}
-            </ul>
-          </GlassCard>
+                )
+              })}
+            </div>
+          </SpotlightCard>
+
+          {/* Education Card */}
+          <SpotlightCard className="p-6 sm:p-8 border-white/10">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
+              <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                <GraduationCap className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Academic Education</h3>
+                <p className="text-xs text-slate-400">Computer & Information Technology</p>
+              </div>
+            </div>
+
+            <div className="mt-5 space-y-2">
+              <h4 className="font-bold text-white text-base">B.Sc. in Information Technology</h4>
+              <p className="text-xs text-slate-400 font-mono">Tanta University · 2021 - 2025</p>
+
+              <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-slate-400">Cumulative GPA</span>
+                  <span className="font-mono font-bold text-emerald-400">3.6 (B+ Very Good)</span>
+                </div>
+                <div className="flex items-start justify-between text-xs gap-2">
+                  <span className="text-slate-400">Graduation Project</span>
+                  <span className="font-mono font-bold text-neon-cyan text-right">
+                    SPIDERS for Security (A+ Excellent)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
   )
 }
+

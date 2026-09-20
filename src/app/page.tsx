@@ -16,8 +16,8 @@ export default function Home() {
       <DeferredParticles />
       <Hero />
       <About />
-      <Experience />
       <Skills />
+      <Experience />
       <Projects />
       <Resume />
       <Contact />
