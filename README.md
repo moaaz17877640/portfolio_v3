@@ -23,7 +23,7 @@
 - **🎨 Modern Cyber & Glassmorphism Aesthetic:** Custom dark/light mode with neon cyan accents, particle canvas, gradient glow orbs, and glassmorphic cards.
 - **🚀 Interactive Production CI/CD Terminal:** Interactive terminal simulator showcasing real-world build, lint, container scan, E2E validation, and zero-downtime rollout stages.
 - **🏆 Verified Cloud Credentials:** Embedded direct verification links to AWS Solutions Architect Associate, AWS Cloud Practitioner, and Oracle Cloud certifications on Credly & Oracle.
-- **💼 Comprehensive Experience & Projects:** Features real production systems from **Madar Solutions** (Jenkaz, Hurlaz, Codeaz, Cloudaz, Flareaz, Dropit, Taco, Sallamaat) and cloud training at **NTI**.
+- **💼 Comprehensive Experience & Projects:** Features real production systems from **Azzrk** (Jenkaz, Hurlaz, Codeaz, Cloudaz, Flareaz, Dropit, Taco, Sallamaat) and cloud training at **NTI**.
 - **📊 Real-time GitHub Integrations:** Integrates repository metrics, top languages, and contribution statistics.
 - **⚡ SEO & Performance Optimized:** Built using Next.js 14 Server Components and optimized asset pipelines for near-instant Lighthouse scores.
 
