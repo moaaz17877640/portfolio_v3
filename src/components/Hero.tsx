@@ -126,7 +126,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal"
           >
-            DevOps Engineer at <span className="text-slate-900 font-semibold dark:text-white">Madar Solutions</span> and Cloud Instructor at{' '}
+            DevOps Engineer at <span className="text-slate-900 font-semibold dark:text-white">Azzrk</span> and Cloud Instructor at{' '}
             <span className="text-slate-900 font-semibold dark:text-white">NTI</span>. I design resilient AWS architectures, automate zero-downtime CI/CD pipelines, and craft declarative Infrastructure as Code.
           </motion.p>
 
