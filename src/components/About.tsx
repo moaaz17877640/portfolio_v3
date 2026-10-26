@@ -84,7 +84,7 @@ export default function About() {
                 I am a <strong className="text-slate-900 dark:text-white font-semibold">Cloud / DevOps Engineer</strong> passionate about turning complex infrastructure into predictable, automated code.
               </p>
               <p>
-                At <strong className="text-slate-900 dark:text-white font-semibold">Madar Solutions</strong>, I maintain staging and production AWS environments, engineer custom CI/CD bridges, and build tooling that simplifies deployments for engineering teams.
+                At <strong className="text-slate-900 dark:text-white font-semibold">Azzrk</strong>, I maintain staging and production AWS environments, engineer custom CI/CD bridges, and build tooling that simplifies deployments for engineering teams.
               </p>
               <p>
                 In parallel at the <strong className="text-slate-900 dark:text-white font-semibold">National Telecommunication Institute (NTI)</strong>, I teach modern cloud architectures, guiding students through practical labs with compute, storage, databases, and containerization.
